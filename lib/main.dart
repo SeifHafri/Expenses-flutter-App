@@ -94,13 +94,15 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () => _startAddNewTransaction(context))
         ],
       ),
-      body: ListView(
-        //mainAxisAlignment: MainAxisAlignment.spaceAround,
-        //crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Chart(_recentTransactions),
-          TransactionList(_userTransactions, _deleteTransaction),
-        ],
+      body: SingleChildScrollView(
+              child: Column(
+          //mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Chart(_recentTransactions),
+            TransactionList(_userTransactions, _deleteTransaction),
+          ],
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
