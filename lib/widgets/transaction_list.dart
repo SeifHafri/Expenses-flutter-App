@@ -10,14 +10,12 @@ class TransactionList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        height: 400,
-        child: _userTransactions.isEmpty
+    return _userTransactions.isEmpty
             ? Column(
                 children: <Widget>[
                   Text(
                     "No transactions added yet",
-                    style: Theme.of(context).textTheme.body1,
+                     textScaleFactor: 1.4,
                   ),
                   SizedBox(
                     height: 10,
@@ -36,7 +34,7 @@ class TransactionList extends StatelessWidget {
                     elevation: 5,
                     margin: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
                     child: ListTile(
-                      trailing: IconButton(icon: Icon(Icons.delete,color: Theme.of(context).errorColor,), onPressed:() => deleteTx(_userTransactions[index].id)),
+                      trailing: IconButton(icon: Icon(Icons.delete_sweep,color: Theme.of(context).errorColor,), onPressed:() => deleteTx(_userTransactions[index].id)),
                       leading: CircleAvatar(
                         radius: 30,
                         child: Padding(
@@ -56,6 +54,6 @@ class TransactionList extends StatelessWidget {
                   );
                 },
                 itemCount: _userTransactions.length,
-              ));
+              );
   }
 }
