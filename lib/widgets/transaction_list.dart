@@ -37,12 +37,14 @@ class TransactionList extends StatelessWidget {
                 elevation: 5,
                 margin: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
                 child: ListTile(
-                  trailing: IconButton(
+                  trailing: 
+                    IconButton(
                       icon: Icon(
                         Icons.delete_sweep,
                         color: Theme.of(context).errorColor,
                       ),
-                      onPressed: () => deleteTx(_userTransactions[index].id)),
+                      onPressed: () => deleteTx(_userTransactions[index].id))
+                  ,
                   leading: CircleAvatar(
                     radius: 30,
                     child: Padding(
